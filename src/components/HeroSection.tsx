@@ -1,0 +1,6 @@
+import {scrollToProgress} from '../utils/animationConfig';
+export default function HeroSection({phase}:{phase:number}){
+  return <div className={`hero-copy phase-${phase}`}>
+    {phase===0?<><div className="hero-kicker intro-reveal"><span className="small-line"/>A new era of Bugatti</div><h1 className="intro-reveal">TOURBILLON</h1><div className="hero-subline intro-reveal"><span>The art of engineering.</span><span className="edition">V16 HYBRID · MOLSHEIM, FRANCE</span></div></>:phase===1?<div className="chapter-heading"><p>01 / The vision</p><h2>Perfection<br/>is engineered.</h2><span>Shaped by speed. Defined by timelessness.</span></div>:phase===2?<div className="chapter-heading"><p>02 / The architecture</p><h2>Extraordinary.<br/>Inside out.</h2><span>Every component has a purpose.<br/>Scroll to reveal what lies beneath.</span></div>:phase===3?<div className="chapter-heading overview-heading"><p>03 / Engineering overview</p><h2>Nothing hidden.<br/>Everything considered.</h2><button className="text-link" onClick={()=>scrollToProgress(.95)}>Enter the component explorer ↗</button></div>:<div className="explorer-title"><p>04 / Component explorer</p><h2>Engineering, in detail.</h2><span>Select a component. Discover its purpose.</span></div>}
+  </div>;
+}
